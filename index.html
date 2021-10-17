@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Potato</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.min.css">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -280,11 +280,12 @@
     const menu = document.getElementById('menu')
     const links = document.getElementsByClassName('links')[0]
     const allDivs = links.getElementsByTagName('DIV')
-    const allA = Array.from(allDivs).map((item) => {
-      item.style.height = item.offsetHeight + 12 + 'px'
-      item.classList.add('expand')
-      return item.firstElementChild
-    })
+    
+      Array.from(allDivs).forEach((item) => {
+        item.style.height = item.offsetHeight + 'px'
+        item.classList.add('expand')
+        return item.firstElementChild
+      })
 
     const linksToggle = e => {
       if (e.target.getAttribute('href') === "#link") {
