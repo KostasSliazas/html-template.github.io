@@ -167,7 +167,7 @@ main {
 }
 
 nav {
-    min-height: 44px;
+    min-height: 48px;
     overflow: hidden;
     position: fixed;
     top: 0;
@@ -194,6 +194,7 @@ ul {
     list-style: none;
     padding: 0;
     max-width: 1000px;
+    line-height: 1.2;
     margin: 0 auto;
     transition: .4s height;
     align-content: baseline
@@ -347,11 +348,12 @@ nav li:last-child {
 
 .links>div {
     overflow: hidden;
-    padding: .25em 0 0
 }
 
 .links>div>a {
-    color: #000
+    color: #000;
+    position: relative;
+    top: 5px;
 }
 
 footer p {
@@ -418,6 +420,10 @@ footer p {
         transform: rotateZ(0)
     }
 
+    .links>div>a {
+        top: 0
+    }
+
     .expand {
         height: 36px !important
     }
@@ -432,7 +438,9 @@ footer p {
 
     nav ul {
         flex-wrap: wrap;
-        height: 100vh
+        height: 100vh;
+        overscroll-behavior: contain;
+        overflow: scroll;
     }
 
     .hidden {
@@ -563,7 +571,8 @@ footer p {
         order: -1;
         margin: 0 0 1em
     }
-    .tophead span{
+
+    .tophead span {
         max-width: 300px;
         line-height: 1.5;
     }
