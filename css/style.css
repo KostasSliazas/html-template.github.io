@@ -511,7 +511,7 @@ footer p {
         background: #fff;
         position: absolute;
         left: 16px;
-        transition: .3s transform, .3s .2s top
+        transition: .1s transform, .1s .05s top
     }
 
     #menu::after {
@@ -525,7 +525,7 @@ footer p {
     #menu.active::after,
     #menu.active::before {
         top: 24px;
-        transition: .3s .2s transform, .3s top
+        transition: .1s .05s transform, .1s top
     }
 
     #menu.active::before {
