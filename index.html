@@ -297,10 +297,12 @@
 
     const menuToggle = e => {
       if (e.target.id === 'search-input') return false
-      if (e.target !== menu) {
+      if (e.target !== menu || e.target.classList.contains('active')) {
         menu.classList.remove('active')
+        document.documentElement.style.overflowY = "scroll"
         menu.parentElement.parentElement.classList.add('hidden')
       } else {
+        document.documentElement.style.overflowY = "hidden"
         e.target.classList.toggle('active')
         e.target.parentElement.parentElement.classList.toggle('hidden')
       }
