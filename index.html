@@ -18,8 +18,8 @@
 
 <body>
   <nav>
+    <a id="menu" href="#menu">Menu</a>
     <ul class="hidden">
-      <li class="order"><a id="menu" href="#menu">Menu</a></li>
       <li class="order"><a id="logo" href="/">logo</a></li>
       <li><a href="#nav00">item0</a></li>
       <li><a href="#nav01">item1</a></li>
@@ -95,6 +95,7 @@
     </div>
     <footer>
       <div class="footer-content">
+        <p><a target="_blank" rel="noopener" href="https://vectors-images.myportfolio.com/">vectors and images</a></p>
         <p>
           1.
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta consectetur suscipit quaerat accusantium quos
@@ -300,11 +301,11 @@
       if (e.target !== menu || e.target.classList.contains('active')) {
         menu.classList.remove('active')
         document.documentElement.style.overflowY = "scroll"
-        menu.parentElement.parentElement.classList.add('hidden')
+        menu.nextElementSibling.classList.add('hidden')
       } else {
         document.documentElement.style.overflowY = "hidden"
         e.target.classList.toggle('active')
-        e.target.parentElement.parentElement.classList.toggle('hidden')
+        e.target.nextElementSibling.classList.toggle('hidden')
       }
     }
 
